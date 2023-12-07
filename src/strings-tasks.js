@@ -218,8 +218,8 @@ function startsWith(/* str, substr */) {
  *   endsWith('Hello World', 'World') => true
  *   endsWith('Hello World', 'Hello') => false
  */
-function endsWith(/* str, substr */) {
-  throw new Error('Not implemented');
+function endsWith(str, substr) {
+  return str.endsWith(substr);
 }
 
 /**
@@ -235,8 +235,14 @@ function endsWith(/* str, substr */) {
  *   formatTime(0, 45) => "00:45"
  *   formatTime(0, 0) => "00:00"
  */
-function formatTime(/* minutes, seconds */) {
-  throw new Error('Not implemented');
+function formatTime(minutes, seconds) {
+  let min = minutes;
+  let sec = seconds;
+  if (minutes.toString().length === 1)
+    min = minutes.toString().padStart(2, '0');
+  if (seconds.toString().length === 1)
+    sec = seconds.toString().padStart(2, '0');
+  return `${min}:${sec}`;
 }
 
 /**
